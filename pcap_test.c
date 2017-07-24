@@ -67,15 +67,21 @@ void qwer(unsigned char* str,int a){
 }
 void qwert(unsigned char* str,int a){
         int i;
-        for(i=0;i<a;i++)
-	                printf("%d",str[i]);
+        for(i=0;i<a;i++){
+                printf("%d",str[i]);
+		for(i;i<a-1;i)
+			printf(":");
+	}
         printf("\n");
 }
 
 void qwerty(unsigned char* str,int a){
         int i;
-	for(i=0;i<a;i++)
+	for(i=0;i<a;i++){
         	printf("%x",str[i]);
+		for(i;i<a-1;i)
+			printf(":");
+	}
         printf("\n");
 }
 
