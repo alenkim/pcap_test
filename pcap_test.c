@@ -62,10 +62,14 @@
 
 void qwer(unsigned char* str,int a){
         int i;
-        for(i=0;i<a;i++){
-                printf("%c ",str[i]);
-	}
+        printf("%s",str);
 	printf("\n");
+}
+void qwerty(unsigned char* str,int a){
+        int i;
+	for(i=0;i<a;i++)
+        	printf("%x",str[i]);
+        printf("\n");
 }
 
 int main(int argc, char *argv[]){
@@ -126,9 +130,9 @@ int main(int argc, char *argv[]){
 			break;
 		ethernet=(struct sniff_ethernet*)packet;
 		printf("ethernet des mac addr : ");
-		qwer((*ethernet).ether_dhost,6);
+		qwerty((*ethernet).ether_dhost,6);
 		printf("ethernet src mac addr : ");
-		qwer((*ethernet).ether_shost,6);
+		qwerty((*ethernet).ether_shost,6);
 		
 	if(ntohs((*ethernet).ether_type)==ETHERTYPE_IP)
 	{
@@ -152,9 +156,9 @@ int main(int argc, char *argv[]){
 			
 			
 			printf("src port : ");
-			qwer((*tcp).th_sport,2);
+			qwerty((*tcp).th_sport,2);
 			printf("des port : ");
-			qwer((*tcp).th_dport,2);
+			qwerty((*tcp).th_dport,2);
 		
 
 			tcpoff=(*tcp).th_offx2;
