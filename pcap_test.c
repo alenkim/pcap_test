@@ -65,6 +65,13 @@ void qwer(unsigned char* str,int a){
         printf("%s",str);
 	printf("\n");
 }
+void qwert(unsigned char* str,int a){
+        int i;
+        for(i=0;i<a;i++)
+	                printf("%d",str[i]);
+        printf("\n");
+}
+
 void qwerty(unsigned char* str,int a){
         int i;
 	for(i=0;i<a;i++)
@@ -156,9 +163,9 @@ int main(int argc, char *argv[]){
 			
 			
 			printf("src port : ");
-			qwerty((*tcp).th_sport,2);
+			qwert((*tcp).th_sport,2);
 			printf("des port : ");
-			qwerty((*tcp).th_dport,2);
+			qwert((*tcp).th_dport,2);
 		
 
 			tcpoff=(*tcp).th_offx2;
