@@ -70,7 +70,7 @@ void qwert(unsigned char* str,int a){
         for(i=0;i<a;i++){
                 printf("%d",str[i]);
 		for(i;i<a-1;i)
-			printf(":");
+			printf(".");
 	}
         printf("\n");
 }
