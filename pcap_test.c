@@ -69,8 +69,6 @@ void qwert(unsigned char* str,int a){
         int i;
         for(i=0;i<a;i++){
                 printf("%d",str[i]);
-		for(i;i<a-1;i)
-			printf(".");
 	}
         printf("\n");
 }
@@ -79,8 +77,6 @@ void qwerty(unsigned char* str,int a){
         int i;
 	for(i=0;i<a;i++){
         	printf("%x",str[i]);
-		for(i;i<a-1;i)
-			printf(":");
 	}
         printf("\n");
 }
@@ -139,7 +135,7 @@ int main(int argc, char *argv[]){
 	while(1){
 		int asdf;
 		asdf = pcap_next_ex(handle,&header,&packet);
-		if(asdf == -1)
+		if(asdf == -1||asdf == -2)
 			break;
 		ethernet=(struct sniff_ethernet*)packet;
 		printf("ethernet des mac addr : ");
